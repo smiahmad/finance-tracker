@@ -7,7 +7,7 @@ class UserStocksController < ApplicationController
       save_stock(stock)
     end
     if stock == nil || stock.name == nil
-      flash[:notice] = "Server is slow. Stock #{stock.name} not added!"
+      flash[:notice] = "Server is slow. Stock not added!"
       redirect_to my_portfolio_path
      else
       @user_stock = UserStock.create(user: current_user, stock: stock)
